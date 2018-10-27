@@ -8,15 +8,16 @@
 
 import UIKit
 
-protocol SimpleSwiftFramework {
-    func alert(message : String)
+public protocol SimpleSwiftFrameworkDelegate {
+    func alert(message : String?)
 }
 
-extension UIViewController : SimpleSwiftFramework {
+@objc public class AlertViewSwift : NSObject , SimpleSwiftFrameworkDelegate {
 
-    func alert(message : String) {
-        let alert = UIAlertController(title: "Alert from FrameWork", message: "Your message is \"" + message + "\"", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+    public func alert(message : String?) {
+        print("alertalertalert")
+        let alert = UIAlertController(title: "Alert from FrameWork", message: "Your message is \"" + (message ?? "") + "\"", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+       // self.present(alert, animated: true, completion: nil)
     }
 }
