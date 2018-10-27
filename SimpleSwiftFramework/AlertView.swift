@@ -12,16 +12,11 @@ protocol SimpleSwiftFramework {
     func alert(message : String)
 }
 
-class CallingFrameworkFunction : SimpleSwiftFramework {
+extension UIViewController : SimpleSwiftFramework {
 
     func alert(message : String) {
         let alert = UIAlertController(title: "Alert from FrameWork", message: "Your message is \"" + message + "\"", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-    
-        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-        alertWindow.rootViewController = UIViewController()
-        alertWindow.windowLevel = UIWindow.Level.alert + 1
-        alertWindow.makeKeyAndVisible()
-        alertWindow.rootViewController?.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 }
