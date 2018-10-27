@@ -14,17 +14,13 @@ protocol SimpleSwiftFramework {
 
 class CallingFrameworkFunction : SimpleSwiftFramework {
 
-    init() {}
-    
-    deinit {}
-    
-    internal func alert(message : String) {
+    func alert(message : String) {
         let alert = UIAlertController(title: "Alert from FrameWork", message: "Your message is \"" + message + "\"", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
     
         let alertWindow = UIWindow(frame: UIScreen.main.bounds)
         alertWindow.rootViewController = UIViewController()
-        alertWindow.windowLevel = UIWindow.Level.alert + 1;
+        alertWindow.windowLevel = UIWindow.Level.alert + 1
         alertWindow.makeKeyAndVisible()
         alertWindow.rootViewController?.present(alert, animated: true, completion: nil)
     }
