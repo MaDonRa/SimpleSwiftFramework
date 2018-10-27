@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		F5F084C821843A760026E6A7 /* SimpleSwiftFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = F5F084C621843A760026E6A7 /* SimpleSwiftFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5F084CF21843A960026E6A7 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F084CE21843A960026E6A7 /* AlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F5F084C321843A760026E6A7 /* SimpleSwiftFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimpleSwiftFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5F084C621843A760026E6A7 /* SimpleSwiftFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleSwiftFramework.h; sourceTree = "<group>"; };
 		F5F084C721843A760026E6A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5F084CE21843A960026E6A7 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		F5F084C521843A760026E6A7 /* SimpleSwiftFramework */ = {
 			isa = PBXGroup;
 			children = (
+				F5F084CE21843A960026E6A7 /* AlertView.swift */,
 				F5F084C621843A760026E6A7 /* SimpleSwiftFramework.h */,
 				F5F084C721843A760026E6A7 /* Info.plist */,
 			);
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					F5F084C221843A760026E6A7 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -130,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F084CF21843A960026E6A7 /* AlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +266,7 @@
 		F5F084CC21843A760026E6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -270,6 +276,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SimpleSwiftFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -278,6 +285,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.MaDonRa.SimpleSwiftFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +294,7 @@
 		F5F084CD21843A760026E6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -295,6 +304,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SimpleSwiftFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
