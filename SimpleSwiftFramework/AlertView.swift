@@ -14,10 +14,23 @@ public protocol SimpleSwiftFrameworkDelegate {
 
 @objc public class AlertViewSwift : NSObject , SimpleSwiftFrameworkDelegate {
 
+    public static let shared = AlertViewSwift()
+    
     public func alert(message : String?) {
-        print("alertalertalert")
+        print("alertalertalertaa")
+        print("ok")
         let alert = UIAlertController(title: "Alert from FrameWork", message: "Your message is \"" + (message ?? "") + "\"", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-       // self.present(alert, animated: true, completion: nil)
+        
+        print("ok")
+        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
+        alertWindow.rootViewController = UIViewController()
+        alertWindow.windowLevel = UIWindow.Level.alert + 1;
+        alertWindow.makeKeyAndVisible()
+        alertWindow.rootViewController?.present(alert, animated: true, completion: {
+            print("asdasdasd")
+        })
+
+        //alertWindow.rootViewController?.present(alert, animated: true, completion:nil)
     }
 }
